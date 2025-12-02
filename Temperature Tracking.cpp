@@ -8,3 +8,29 @@
 
 // Key Concepts
 // Iteration (for or while), Arrays
+
+
+//declare int days
+//declare double temperature
+//declare sum
+//
+//make an array to store 7 temperatures
+//
+//prompt user to type temperatures in that array
+//
+//make sum of those temperatures
+//
+//calculate avarage temp deviding sum/days
+//
+//cout output results
+//
+//if daysabove25 ==0 cout 0 days were hotter than 25 degrees
+//if daysAbove25 == days cout 7 days were hotter than 25 degrees
+//else some days were hotter than 25
+//
+//return 0
+
+
+#include <iostream>
+using namespace std;
+
