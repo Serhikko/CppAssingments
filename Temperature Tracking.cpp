@@ -11,8 +11,10 @@
 
 
 //declare int days
-//declare double temperature
+//declare double temperature [array]
 //declare sum
+//declare above25
+//
 //
 //make an array to store 7 temperatures
 //
@@ -20,6 +22,7 @@
 //
 //make sum of those temperatures
 //
+//declare avarage
 //calculate avarage temp deviding sum/days
 //
 //cout output results
@@ -33,4 +36,37 @@
 
 #include <iostream>
 using namespace std;
+
+int main()
+{
+    //declaring variables
+    const int days = 7 ;
+    double temps[days];
+    double sum;
+    int above25;
+
+
+    //array
+    for (int i=0; i < days; i++)
+    {
+        cout << "Please enter 7 temperatures " << (i + 1)<< ": ";
+        
+        //store the temps
+        cin >> temps[i];
+ 
+        //total
+        sum += temps[i];
+
+        //check if above 25
+        if (temps[i] > 25)
+        {
+            above25++;
+        }
+    }
+
+    double avarage = sum/days;
+    
+    cout << avarage;
+    return 0;
+}
 
