@@ -47,7 +47,7 @@ int main()
     string descriptior;
 
     //prompting the user
-    cout << "Enter Earhquake magnitude";
+    cout << "Enter Earhquake magnitude  ";
     cin >> magnitude;
 
     switcher = magnitude;//because switch must be an integer,we should declare another variable so it will wount give us error.
