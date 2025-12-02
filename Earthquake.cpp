@@ -42,50 +42,52 @@ using namespace std;
 int main()
 {
     //declaring variables
-    double magnitude,userInput;
+    double magnitude;
     int switcher;
     string descriptior;
 
     //prompting the user
     cout << "Enter Earhquake magnitude";
-    cin >> userInput;
+    cin >> magnitude;
 
     switcher = magnitude;//because switch must be an integer,we should declare another variable so it will wount give us error.
     
+    cout << "a " << magnitude << " magnitude earthquake is considered ";
+
     switch (switcher) 
     {
     case 0:
     case 1:
-        cout << "Magnitude is less then 2 is considered Mirco earthquacke";
+        cout << "Mirco";
         break;
     case 2:
-        cout << "Magnitude is 2.0 to less than 3.0 is considered Very Minor earthquacke";
+        cout << "Very Minor";
         break;
     case 3:
-        cout << "Magnitude is 3.0 to less than 4.0 is considered Minor earthquacke";
+        cout << "Minor";
         break;
     case 4:
-        cout << "Magnitude is 4.0 to less than 5.0 is considered Light earthquacke";
+        cout << "Light";
         break;
     case 5:
-        cout << "Magnitude is 5.0 to less than 6.0 is considered Moderate earthquacke";
+        cout << "Moderate";
         break;
     case 6:
-        cout << "Magnitude is 6.0 to less than 7.0 is considered Strong earthquacke";
+        cout << "Strong";
         break;
     case 7:
-        cout << "Magnitude is 7.0 to less than 8.0 is considered Major earthquacke";
+        cout << "Major";
         break;
     case 8:
-        cout << "Magnitude is 8.0 to less than 10.0  is considered Great earthquacke";
+        cout << "Great";
         break;
     case 9:
-        cout << "Magnitude is 8.0 to less than 10.0  is considered Great earthquacke";
+        cout << "Great";
         break;
     default:
-        cout << "Magnitude is More than 10.0 is considered Meteoric earthquacke";
+        cout << "Meteoric";
         break;
     }
 
-
+    return 0;
 }
