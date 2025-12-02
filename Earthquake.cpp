@@ -62,7 +62,7 @@ double userInput(double input)
     cin >> input;
     input = validation(input);
 
-    return input;//because switch must be an integer,we should declare another variable so it will wount give us error.
+    return input;
 }
 
 void definer(int choose)
