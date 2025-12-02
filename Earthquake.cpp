@@ -23,7 +23,7 @@
 
 // ---
 
-// // use while (cin.fail()) {//Check if user enters valid input
+//     while (cin.fail()) {//Check if user enters valid input
 //     cout << "Invalid input" << endl;//output error message
 //     cin.clear(); //clear bad input flag
 //     cin.ignore(1000, '\n'); //ignore input
@@ -39,21 +39,30 @@
 #include <string>
 using namespace std;
 
-int main()
-{
-    //declaring variables
-    double magnitude;
-    int switcher;
-    string descriptior;
 
+
+void userInput(double magnitude, int switcher)
+{
     //prompting the user
     cout << "Enter Earhquake magnitude  ";
     cin >> magnitude;
 
     switcher = magnitude;//because switch must be an integer,we should declare another variable so it will wount give us error.
-    
-    cout << "a " << magnitude << " magnitude earthquake is considered ";
+}
 
+void validation(double magnitude)
+{
+    while (cin.fail()) //Check if user enters valid input
+    {
+        cout << "Invalid input, Plese enter again" << endl;//output error message
+        cin.clear(); //clear bad input flag
+        cin.ignore( '\n'); //ignore input,i want to make it to ignore string and char datatypes so it will be passing only the numbers
+        cin >> magnitude; //get number again
+    }
+}
+
+void definer(int switcher)
+{
     switch (switcher) 
     {
     case 0:
@@ -88,6 +97,27 @@ int main()
         cout << "Meteoric";
         break;
     }
+}
+
+void outPut(double magnitude)
+{
+    //output to make the final sentence
+    cout << "a " << magnitude << " magnitude earthquake is considered ";
+}
+
+int main()
+{
+    //declaring variables
+    double magnitude;
+    int switcher;
+
+    userInput();
+
+    validation();
+
+    outPut();
+
+    definer();
 
     return 0;
 }
