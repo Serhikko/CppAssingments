@@ -41,29 +41,33 @@ using namespace std;
 
 
 
-void userInput(double magnitude, int switcher)
-{
-    //prompting the user
-    cout << "Enter Earhquake magnitude  ";
-    cin >> magnitude;
 
-    switcher = magnitude;//because switch must be an integer,we should declare another variable so it will wount give us error.
-}
 
-void validation(double magnitude)
+double validation(double input)
 {
     while (cin.fail()) //Check if user enters valid input
     {
         cout << "Invalid input, Plese enter again" << endl;//output error message
         cin.clear(); //clear bad input flag
-        cin.ignore( '\n'); //ignore input,i want to make it to ignore string and char datatypes so it will be passing only the numbers
-        cin >> magnitude; //get number again
+        cin.ignore(1000, '\n'); //ignore input,i want to make it to ignore string and char datatypes so it will be passing only the numbers
+        cin >> input; //get number again
     }
+    return input;
 }
 
-void definer(int switcher)
+double userInput(double input)
 {
-    switch (switcher) 
+    //prompting the user
+    cout << "Enter Earhquake magnitude  ";
+    cin >> input;
+    input = validation(input);
+
+    return input;//because switch must be an integer,we should declare another variable so it will wount give us error.
+}
+
+void definer(int choose)
+{
+    switch (choose) 
     {
     case 0:
     case 1:
@@ -111,13 +115,13 @@ int main()
     double magnitude;
     int switcher;
 
-    userInput();
+    magnitude = userInput(magnitude);
 
-    validation();
 
-    outPut();
+    outPut(magnitude);
 
-    definer();
+    switcher = magnitude;
+    definer(switcher);
 
     return 0;
 }
