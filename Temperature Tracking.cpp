@@ -45,28 +45,56 @@ int main()
     double sum;
     int above25;
 
+    //array for days
+    string dayNames[days] = 
+    {
+        "Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday", "Sunday"
+    };
 
+
+    //input 
+    for (int i=0; i < days; i++)
+    {
+        cout << "Please enter temperature for  " << dayNames[i] << ": ";
+        cin >> temps[i];
+    }
+
+    int aboveCount;
+    string aboveDays;
     //array
     for (int i=0; i < days; i++)
     {
-        cout << "Please enter 7 temperatures " << (i + 1)<< ": ";
-        
-        //store the temps
-        cin >> temps[i];
- 
         //total
         sum += temps[i];
 
         //check if above 25
         if (temps[i] > 25)
         {
+            if (aboveCount > 0)
+            {
+                aboveDays += " and ";
+            }
+            aboveDays += dayNames[i];
             above25++;
         }
     }
 
     double avarage = sum/days;
     
-    cout << avarage;
+    cout << "--------------------------------------------\n";
+    cout << "Avarage week temperature is " << avarage << " degrees\n" ;
+    
+    if (above25 == 0)
+    {
+        cout << "There was no hotter days than 25 deggrees.\n";
+    }  
+        else
+        {
+            cout << "The days with temperature above 25 are "<< aboveDays << ".\n";
+        }
+    
+
     return 0;
 }
 
