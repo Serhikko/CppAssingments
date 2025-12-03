@@ -23,12 +23,7 @@
 
 // ---
 
-//     while (cin.fail()) {//Check if user enters valid input
-//     cout << "Invalid input" << endl;//output error message
-//     cin.clear(); //clear bad input flag
-//     cin.ignore(1000, '\n'); //ignore input
-//     cin >> x; //get number again
-//   }
+
 
 //1.declare variables(magnitude,userIput,Descriptor)
 //2.Prompt user input,and cin it.
@@ -38,9 +33,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
-
-
 
 
 double validation(double input)
@@ -65,41 +57,31 @@ double userInput(double input)
     return input;
 }
 
-void definer(int choose)
+string definer(int choose)
 {
     switch (choose) 
     {
     case 0:
     case 1:
-        cout << "Mirco";
-        break;
+        return "Micro";
     case 2:
-        cout << "Very Minor";
-        break;
+        return  "Very Minor";
     case 3:
-        cout << "Minor";
-        break;
+        return  "Minor";
     case 4:
-        cout << "Light";
-        break;
+        return  "Light";
     case 5:
-        cout << "Moderate";
-        break;
+        return  "Moderate";
     case 6:
-        cout << "Strong";
-        break;
+        return  "Strong";
     case 7:
-        cout << "Major";
-        break;
+        return  "Major";
     case 8:
-        cout << "Great";
-        break;
+        return  "Great";
     case 9:
-        cout << "Great";
-        break;
+        return  "Great";
     default:
-        cout << "Meteoric";
-        break;
+        return  "Meteoric";
     }
 }
 
@@ -117,11 +99,10 @@ int main()
 
     magnitude = userInput(magnitude);
 
-
     outPut(magnitude);
 
     switcher = magnitude;
-    definer(switcher);
+    cout << definer(switcher);
 
     return 0;
 }
